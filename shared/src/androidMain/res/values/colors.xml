@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_mode_screen">#FFFFFF</color>
+    <color name="light_mode_button_start">#FFEB39</color>
+    <color name="light_mode_button_end">#FFEB39</color>
+    <color name="light_mode_button_shadow">#F3AE3B</color>
+    <color name="light_mode_button_pressed">#FFEB39</color>
+    <color name="light_mode_button_disabled">#F2F2F2</color>
+    <color name="light_mode_text_primary_default">#000000</color>
+    <color name="light_mode_text_primary_disabled">#AAAAAA</color>
+    <color name="light_mode_text_primary_pressed">#000000</color>
+    <color name="light_mode_text_primary_link">#2D81FF</color>
+    <color name="light_mode_button_link">#FFFFFF</color>
+    <color name="light_mode_icon_primary">#000000</color>
+    <color name="light_mode_text_primary_shadow">#00000000</color>
+</resources>
