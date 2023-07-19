@@ -13,4 +13,13 @@
     <color name="light_mode_button_link">#FFFFFF</color>
     <color name="light_mode_icon_primary">#000000</color>
     <color name="light_mode_text_primary_shadow">#00000000</color>
+    <color name="light_mode_success">#00CD07</color>
+    <color name="light_mode_error_start">#FE473B</color>
+    <color name="light_mode_error_end">#F44437</color>
+    <color name="light_mode_invalid">#08000032</color>
+    <color name="light_mode_purple_start">#A980FF</color>
+    <color name="light_mode_purple_end">#7A3CFF</color>
+    <color name="light_mode_screen_gradient_start">#E76E87</color>
+    <color name="light_mode_screen_gradient_end">#FFAA7A</color>
+    <color name="light_mode_letter_background">#99000000</color>
 </resources>

@@ -3,8 +3,8 @@ package letters.game.core.bottomsheet
 import com.arkivanov.decompose.router.overlay.ChildOverlay
 import com.arkivanov.essenty.parcelable.Parcelable
 import kotlinx.coroutines.flow.Flow
-import ru.flawery.core.state.CNullableStateFlow
-import ru.flawery.core.state.CStateFlow
+import letters.game.core.state.CNullableStateFlow
+import letters.game.core.state.CStateFlow
 
 /**
  * Class to configure and control Bottom Sheet's behaviours

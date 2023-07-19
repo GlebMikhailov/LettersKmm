@@ -1,4 +1,4 @@
-package ru.flawery.core.state
+package letters.game.core.state
 
 import com.arkivanov.decompose.ComponentContext
 import kotlinx.coroutines.flow.MutableStateFlow

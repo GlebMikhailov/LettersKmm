@@ -47,7 +47,7 @@ object Typography {
         lineHeight = 16.0.sp,
     )
     val buttonMediumNormal = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nexa_text_regular)),
+        fontFamily = FontFamily(Font(R.font.nexa_text_extra_bold)),
         fontSize = 14.0.sp,
         letterSpacing = 0.0.sp,
         lineHeight = 16.0.sp,

@@ -61,3 +61,40 @@ fun Colors.buttonPrimaryShadow(): Color = colorResource(id = R.color.light_mode_
 @Composable
 @ReadOnlyComposable
 fun Colors.textPrimaryShadow(): Color = colorResource(id = R.color.light_mode_text_primary_shadow)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.success(): Color = colorResource(id = R.color.light_mode_success)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.errorStart(): Color = colorResource(id = R.color.light_mode_error_start)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.errorEnd(): Color = colorResource(id = R.color.light_mode_error_end)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.invalidLetter(): Color = colorResource(id = R.color.light_mode_invalid)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.purpleStart(): Color = colorResource(id = R.color.light_mode_purple_start)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.purpleEnd(): Color = colorResource(id = R.color.light_mode_purple_end)
+
+
+@Composable
+@ReadOnlyComposable
+fun Colors.screenStart(): Color = colorResource(id = R.color.light_mode_screen_gradient_start)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.screenEnd(): Color = colorResource(id = R.color.light_mode_screen_gradient_end)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.letterBackground(): Color = colorResource(id = R.color.light_mode_letter_background)

@@ -14,7 +14,13 @@ val LightAppColors = CustomColors(
     isLight = true,
 
     background = BackgroundColors(
-        screen = { Colors.screen() }
+        screen = { Colors.screen() },
+        invalid = { Colors.invalidLetter() },
+        screenSunset = GradientColor(
+            start = { Colors.screenStart() },
+            end = { Colors.screenEnd() }
+        ),
+        letterBackground = { Colors.letterBackground() }
     ),
 
     button = ButtonColors(
@@ -27,9 +33,18 @@ val LightAppColors = CustomColors(
                 start = { Colors.buttonPrimaryPressed() },
                 end = { Colors.buttonPrimaryPressed() }
             ),
+            disabled = { Colors.buttonDisabled() },
             link = { Colors.buttonLink() },
             shadowColor = { Colors.buttonPrimaryShadow() },
-            disabled = { Colors.buttonDisabled() }
+            error = GradientColor(
+                start = { Colors.errorStart() },
+                end = { Colors.errorEnd() }
+            ),
+            success = { Colors.success() }
+        ),
+        purple = GradientColor(
+            start = { Colors.purpleStart() },
+            end = { Colors.purpleEnd() }
         )
     ),
 
@@ -43,10 +58,18 @@ val LightAppColors = CustomColors(
                 start = { Colors.textPrimaryPressed() },
                 end = { Colors.textPrimaryPressed() }
             ),
+            disabled = { Colors.textPrimaryDisabled() },
             link = { Colors.textPrimaryLink() },
             shadowColor = { Colors.textPrimaryShadow() },
-            disabled = { Colors.textPrimaryDisabled() }
-        )
+            error = GradientColor(
+                start = { Colors.errorStart() },
+                end = { Colors.errorEnd() }
+            ),
+            success = { Colors.success() },
+        ),
+        onError = { Colors.screen() },
+        onSuccess = { Colors.screen() },
+        backgroundInvert = { Colors.screen() }
     ),
 
     icon = IconColor(

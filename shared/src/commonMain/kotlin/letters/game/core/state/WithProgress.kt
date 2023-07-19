@@ -1,4 +1,4 @@
-package ru.flawery.core.state
+package letters.game.core.state
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlin.reflect.KMutableProperty0

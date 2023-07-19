@@ -21,7 +21,7 @@ fun CustomColors.toMaterialColors(): Colors {
         onSecondary = text.primary.default.start(),
         onBackground = text.primary.default.start(),
         onSurface = text.primary.default.start(),
-        onError = text.primary.default.start()
+        onError = text.onError()
     )
 }
 

@@ -10,8 +10,8 @@ import me.aartikov.replica.single.Replica
 import me.aartikov.replica.single.currentState
 import letters.game.core.error_handling.ErrorHandler
 import letters.game.core.error_handling.errorMessage
-import ru.flawery.core.state.CStateFlow
-import ru.flawery.core.state.computed
+import letters.game.core.state.CStateFlow
+import letters.game.core.state.computed
 
 /**
  * An analogue of [Loadable] but with localized error message. Required for Swift interop.

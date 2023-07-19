@@ -3,7 +3,7 @@ package letters.game.core.dialog
 import com.arkivanov.decompose.router.overlay.ChildOverlay
 import com.arkivanov.essenty.parcelable.Parcelable
 import kotlinx.coroutines.flow.Flow
-import ru.flawery.core.state.CStateFlow
+import letters.game.core.state.CStateFlow
 
 abstract class DialogControl<C : Parcelable, T : Any> {
     abstract val dialogOverlay: CStateFlow<ChildOverlay<*, T>>

@@ -11,7 +11,7 @@ import letters.game.core.error_handling.ErrorHandler
 import letters.game.feautures.home.createHomeComponent
 import letters.game.feautures.home.ui.HomeComponent
 import letters.game.core.message.createMessageComponent
-import ru.flawery.core.state.CStateFlow
+import letters.game.core.state.CStateFlow
 import letters.game.core.utils.safePush
 import letters.game.core.utils.setupLogging
 import letters.game.core.utils.toCStateFlow

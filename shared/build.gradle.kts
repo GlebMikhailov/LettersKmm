@@ -115,6 +115,7 @@ android {
 
 dependencies {
     implementation(libs.yandex.map)
+    testImplementation("org.testng:testng:6.9.6")
     coreLibraryDesugaring(libs.android.desugar)
     add("kspCommonMainMetadata", libs.ktorfit.ksp)
     add("kspAndroid", libs.ktorfit.ksp)

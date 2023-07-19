@@ -14,6 +14,9 @@ data class CustomColors(
 
 data class BackgroundColors(
     val screen: @Composable () -> Color,
+    val invalid: @Composable () -> Color,
+    val screenSunset: GradientColor,
+    val letterBackground: @Composable () -> Color
 )
 
 data class GradientColor(
@@ -23,6 +26,7 @@ data class GradientColor(
 
 data class ButtonColors(
     val primary: PrimaryColor,
+    val purple: GradientColor
 )
 
 data class PrimaryColor(
@@ -30,11 +34,16 @@ data class PrimaryColor(
     val pressed: GradientColor,
     val disabled: @Composable () -> Color,
     val link: @Composable () -> Color,
-    val shadowColor: @Composable () -> Color
+    val shadowColor: @Composable () -> Color,
+    val error: GradientColor,
+    val success: @Composable () -> Color
 )
 
 data class TextColors(
     val primary: PrimaryColor,
+    val onError: @Composable () -> Color,
+    val onSuccess: @Composable () -> Color,
+    val backgroundInvert: @Composable () -> Color,
 )
 
 data class IconColor(

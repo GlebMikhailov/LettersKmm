@@ -3,7 +3,7 @@ package letters.game.core.message.ui
 import letters.game.core.bottomsheet.BottomSheetControl
 import letters.game.core.message.domain.Message
 import letters.game.core.message.ui.bottomsheet.MessageBottomSheetComponent
-import ru.flawery.core.state.CNullableStateFlow
+import letters.game.core.state.CNullableStateFlow
 
 /**
  * A component for centralized message showing. There should be only one instance

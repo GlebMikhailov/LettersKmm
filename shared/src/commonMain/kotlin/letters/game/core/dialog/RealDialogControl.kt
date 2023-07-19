@@ -5,7 +5,7 @@ import com.arkivanov.decompose.router.overlay.*
 import com.arkivanov.essenty.parcelable.Parcelable
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
-import ru.flawery.core.state.CStateFlow
+import letters.game.core.state.CStateFlow
 import letters.game.core.utils.toCStateFlow
 import kotlin.reflect.KClass
 

@@ -6,7 +6,7 @@ import letters.game.core.bottomsheet.FakeBottomSheetControl
 import letters.game.core.message.domain.Message
 import letters.game.core.message.ui.bottomsheet.FakeMessageBottomSheetComponent
 import letters.game.core.message.ui.bottomsheet.MessageBottomSheetComponent
-import ru.flawery.core.state.CNullableMutableStateFlow
+import letters.game.core.state.CNullableMutableStateFlow
 
 class FakeMessageComponent : MessageComponent {
 

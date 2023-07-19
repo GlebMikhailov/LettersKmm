@@ -17,6 +17,7 @@ import letters.game.core.ui.MessageUi
 import letters.game.core.utils.LocalSystemBarsSettings
 import letters.game.core.utils.accumulate
 import letters.game.core.theme.custom.CustomTheme
+import letters.game.features.home.HomeUi
 
 @Composable
 fun RootUi(
@@ -32,7 +33,8 @@ fun RootUi(
         stack = childStack
     ) { child ->
         when (val instance = child.instance) {
-            is RootComponent.Child.Home -> TODO()
+            is RootComponent.Child.Home -> HomeUi(instance.component)
+            is RootComponent.Child.Game -> TODO()
         }
     }
 

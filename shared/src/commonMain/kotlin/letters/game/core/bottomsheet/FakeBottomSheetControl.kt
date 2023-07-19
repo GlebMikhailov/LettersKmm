@@ -2,10 +2,10 @@ package letters.game.core.bottomsheet
 
 import com.arkivanov.essenty.parcelable.Parcelable
 import letters.game.core.utils.createFakeChildOverlay
-import ru.flawery.core.state.CMutableStateFlow
-import ru.flawery.core.state.CNullableMutableStateFlow
-import ru.flawery.core.state.CNullableStateFlow
-import ru.flawery.core.state.CStateFlow
+import letters.game.core.state.CMutableStateFlow
+import letters.game.core.state.CNullableMutableStateFlow
+import letters.game.core.state.CNullableStateFlow
+import letters.game.core.state.CStateFlow
 
 class FakeBottomSheetControl<C : Parcelable, T : Any>(bottomSheetComponent: T) :
     BottomSheetControl<C, T>() {

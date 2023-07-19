@@ -13,7 +13,7 @@ import letters.game.core.message.data.MessageService
 import letters.game.core.message.domain.HeavyMessage
 import letters.game.core.message.domain.Message
 import letters.game.core.message.ui.bottomsheet.MessageBottomSheetComponent
-import ru.flawery.core.state.CNullableMutableStateFlow
+import letters.game.core.state.CNullableMutableStateFlow
 import letters.game.core.utils.componentScope
 
 class RealMessageComponent(

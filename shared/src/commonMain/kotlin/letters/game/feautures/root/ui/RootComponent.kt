@@ -3,7 +3,8 @@ package letters.game.feautures.root.ui
 import com.arkivanov.decompose.router.stack.ChildStack
 import letters.game.feautures.home.ui.HomeComponent
 import letters.game.core.message.ui.MessageComponent
-import ru.flawery.core.state.CStateFlow
+import letters.game.feautures.game.ui.GameComponent
+import letters.game.core.state.CStateFlow
 
 /**
  * A root of a Decompose component tree.
@@ -19,5 +20,6 @@ interface RootComponent {
 
     sealed interface Child {
         class Home(val component: HomeComponent) : Child
+        class Game(val component: GameComponent) : Child
     }
 }

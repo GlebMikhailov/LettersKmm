@@ -1,0 +1,9 @@
+<resources>
+    <string name="home_welcome">Welcome to %s</string>
+    <string name="home_play">Play</string>
+    <string name="home_set_language">Language</string>
+
+    <string name="home_game_example1">Horse</string>
+    <string name="home_game_example2">Sheep</string>
+    <string name="home_game_example3">Sleep</string>
+</resources>
