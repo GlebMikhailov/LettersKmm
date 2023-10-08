@@ -7,8 +7,8 @@ import letters.game.core.configuration.BuildType
 import letters.game.core.configuration.Configuration
 import letters.game.feautures.featuresModules
 import letters.game.feautures.root.createRootComponent
-import org.koin.core.Koin
 import letters.game.feautures.root.ui.RootComponent
+import org.koin.core.Koin
 
 private const val productVersionCode = 1
 private const val productVersionName = "1.0"
@@ -41,7 +41,7 @@ class Core(config: Configuration) {
                 listOf(
                     commonCoreModule(configuration),
                     platformCoreModule(configuration),
-                ) + featuresModules
+                ) + featuresModules(configuration)
             )
             declare(ComponentFactory(this))
             createEagerInstances()

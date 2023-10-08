@@ -44,26 +44,9 @@ class DeserializationException(cause: Throwable?) : TransportException(cause)
 class ExternalAppNotFoundException(cause: Throwable?) : ApplicationException(cause)
 
 /**
- * Could not fetch current location
- */
-class LocationNotAvailableException(cause: Throwable?) : ApplicationException(cause)
-
-/**
- * Current address is not selected when it is required
- */
-class CurrentAddressRequiredException : ApplicationException(null)
-
-/**
  * Some unknown issue
  */
 class UnknownException(cause: Throwable?, override val message: String) :
     ApplicationException(cause)
 
-/**
- * Contact not foun with cursor
- */
-class ContactNotFoundException(cause: Throwable?) : ApplicationException(cause)
-
-class InvalidContactException(cause: Throwable?) : ApplicationException(cause)
-
-class NoPermissionException(cause: Throwable?) : ApplicationException(cause)
+class WordNotFoundException(private val wordName: String, override val message: String = "Word not found with name $wordName") : ApplicationException(null)

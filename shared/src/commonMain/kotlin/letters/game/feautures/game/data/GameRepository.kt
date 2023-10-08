@@ -17,4 +17,6 @@ interface GameRepository {
         gameId: GameId,
         word: String
     ): GameResponse
+
+    suspend fun getMoreAttempts(gameId: GameId, ): GameResponse
 }

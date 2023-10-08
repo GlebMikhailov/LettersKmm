@@ -3,13 +3,16 @@ package letters.game.core.network
 import de.jensklingenberg.ktorfit.Ktorfit
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.plugins.HttpSend
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.auth.Auth
 import io.ktor.client.plugins.auth.providers.BearerTokens
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.LogLevel
+import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
+import io.ktor.client.plugins.plugin
 import io.ktor.client.request.header
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
@@ -69,6 +72,14 @@ class NetworkApiFactory(
             }
 
             setupErrorConverter()
+        }.apply {
+            val configInterceptor = ConfigInterceptor(
+                configuration = configuration,
+            )
+            plugin(HttpSend).intercept { request ->
+                co.touchlab.kermit.Logger.v("intercept: ${request.url}")
+                configInterceptor.intercept(this, request)
+            }
         }
     }
 

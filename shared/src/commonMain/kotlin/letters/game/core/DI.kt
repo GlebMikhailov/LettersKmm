@@ -1,16 +1,19 @@
 package letters.game.core
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import letters.game.core.configuration.BuildType
 import letters.game.core.configuration.Configuration
 import letters.game.core.error_handling.ErrorHandler
+import letters.game.core.message.data.MessageService
+import letters.game.core.message.data.MessageServiceImpl
 import letters.game.core.network.BackendUrl
 import letters.game.core.network.NetworkApiFactory
 import letters.game.core.network.createDefaultJson
 import me.aartikov.replica.client.ReplicaClient
 import org.koin.core.module.Module
 import org.koin.dsl.module
-import letters.game.core.message.data.MessageService
-import letters.game.core.message.data.MessageServiceImpl
 
 fun commonCoreModule(configuration: Configuration) = module {
     single { configuration }
@@ -27,6 +30,7 @@ fun commonCoreModule(configuration: Configuration) = module {
         )
     }
     factory { createDefaultJson() }
+    single { CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate) }
 }
 
 expect fun platformCoreModule(configuration: Configuration): Module

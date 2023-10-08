@@ -98,3 +98,15 @@ fun Colors.screenEnd(): Color = colorResource(id = R.color.light_mode_screen_gra
 @Composable
 @ReadOnlyComposable
 fun Colors.letterBackground(): Color = colorResource(id = R.color.light_mode_letter_background)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.buttonSecondaryBackground(): Color = colorResource(id = R.color.light_mode_button_secondary_background)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.buttonSecondaryShadow(): Color = colorResource(id = R.color.light_mode_button_secondary_shadow)
+
+@Composable
+@ReadOnlyComposable
+fun Colors.buttonSecondaryDisabled(): Color = colorResource(id = R.color.light_mode_button_secondary_disabled)

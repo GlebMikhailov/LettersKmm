@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentActivity
 import com.arkivanov.decompose.defaultComponentContext
 import com.arkivanov.essenty.lifecycle.asEssentyLifecycle
 import com.arkivanov.essenty.lifecycle.doOnDestroy
+import com.yandex.mobile.ads.rewarded.RewardedAd
 import letters.game.core.activityProvider
 import letters.game.core.core
 import letters.game.core.theme.AppTheme
@@ -36,7 +37,7 @@ abstract class BaseActivity : FragmentActivity() {
         lifecycle.asEssentyLifecycle().doOnDestroy {
             activityProvider.detachActivity()
         }
-
+        RewardedAd(this)
         rootComponent = application.core.createRootComponent(defaultComponentContext(), ::closeApp)
         setContent {
             AppTheme {
@@ -70,5 +71,9 @@ abstract class BaseActivity : FragmentActivity() {
                 isTriedToQuit = false
             }
         }, TRY_TO_QUIT_INTERVAL_MS)
+    }
+
+    private fun initYandexAd() {
+
     }
 }

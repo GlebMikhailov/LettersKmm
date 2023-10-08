@@ -1,0 +1,13 @@
+<resources>
+    <string name="game_word_not_found">Word not found, input real noun</string>
+    <string name="game_clear">CLEAR</string>
+
+    <!-- dialogs -->
+    <string name="game_dialog_win_title">You are win</string>
+    <string name="game_dialog_win_positive_btn_text">Restart</string>
+    <string name="game_dialog_win_negative_btn_text">Go to main menu</string>
+
+    <string name="game_dialog_lose_title">You are lose</string>
+    <string name="game_dialog_lose_positive_btn_text">Get more attempts</string>
+    <string name="game_dialog_lose_negative_btn_text">Go to main menu</string>
+</resources>

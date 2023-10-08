@@ -2,13 +2,13 @@ package letters.game.core.message
 
 import com.arkivanov.decompose.ComponentContext
 import letters.game.core.ComponentFactory
-import org.koin.core.component.get
 import letters.game.core.bottomsheet.BottomSheetControl
 import letters.game.core.message.domain.HeavyMessage
 import letters.game.core.message.ui.MessageComponent
 import letters.game.core.message.ui.RealMessageComponent
 import letters.game.core.message.ui.bottomsheet.MessageBottomSheetComponent
 import letters.game.core.message.ui.bottomsheet.RealMessageBottomSheetComponent
+import org.koin.core.component.get
 
 fun ComponentFactory.createMessageComponent(
     componentContext: ComponentContext

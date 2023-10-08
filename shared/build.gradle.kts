@@ -44,7 +44,7 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                implementation(libs.yandex.map)
+                implementation(libs.bundles.ad)
                 implementation(libs.forms)
                 implementation(libs.collapsing.toolbar)
                 implementation(libs.coroutines.android)
@@ -63,6 +63,7 @@ kotlin {
                 implementation(libs.moko.permissionsCompose)
                 implementation(libs.moko.permissionsTest)
                 implementation(libs.accompanist.flowlayout)
+                implementation ("com.yandex.android:mobileads:5.10.0")
             }
         }
 
@@ -114,7 +115,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.yandex.map)
+    implementation(libs.bundles.ad)
     testImplementation("org.testng:testng:6.9.6")
     coreLibraryDesugaring(libs.android.desugar)
     add("kspCommonMainMetadata", libs.ktorfit.ksp)

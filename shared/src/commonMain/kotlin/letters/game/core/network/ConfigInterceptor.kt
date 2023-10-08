@@ -17,8 +17,7 @@ class ConfigInterceptor(
 
     private fun HttpRequestBuilder.attachConfig(configuration: Configuration) {
         return with(this.url) {
-            parameters[DEVICE_PARAMETER_NAME] = configuration.platform.type.toDto()
-            parameters[VERSION_CODE_PARAMETER_NAME] = configuration.appVersionCode.toString()
+            parameters[DEVICE_ID_PARAMETER_NAME] = configuration.device.deviceId
         }
     }
 
@@ -32,5 +31,6 @@ class ConfigInterceptor(
     companion object {
         private const val VERSION_CODE_PARAMETER_NAME = "version"
         private const val DEVICE_PARAMETER_NAME = "device"
+        private const val DEVICE_ID_PARAMETER_NAME = "deviceId"
     }
 }

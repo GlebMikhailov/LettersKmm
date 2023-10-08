@@ -4,7 +4,7 @@ import dev.icerock.moko.resources.desc.StringDesc
 import dev.icerock.moko.resources.desc.desc
 import kotlinx.coroutines.MainScope
 import letters.game.MR
-import letters.game.feautures.game.domain.LetterState
+import letters.game.feautures.game.domain.Field
 import ru.mobileup.kmm_form_validation.control.InputControl
 
 class FakeHomeComponent : HomeComponent {
@@ -14,6 +14,7 @@ class FakeHomeComponent : HomeComponent {
         MR.strings.home_game_example3.desc()
     )
     override val wordInputControl: InputControl = InputControl(MainScope())
+    override val field: Field = Field(5, 3, 3)
 
     override fun onStartGameClick() = Unit
 }

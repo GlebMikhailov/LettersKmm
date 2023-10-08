@@ -11,8 +11,6 @@ import letters.game.feautures.game.domain.Language
 import letters.game.feautures.game.domain.LanguageId
 import letters.game.feautures.game.domain.Word
 import letters.game.feautures.game.domain.WordId
-import letters.game.feautures.splash.data.dto.DeviceResponse
-import letters.game.feautures.splash.data.dto.toDevice
 
 @Serializable
 data class GameResponse(
@@ -20,7 +18,7 @@ data class GameResponse(
     @SerialName("word") val word: WordResponse,
     @SerialName("field") val field: FieldResponse,
     @SerialName("attempts") val attempts: List<AttemptResponse>,
-    @SerialName("device") val device: DeviceResponse
+    @SerialName("additionalAttempts") val additionalAttempts: Int,
 )
 
 @Serializable
@@ -30,7 +28,6 @@ data class LanguageResponse(
     @SerialName("nativeName") val nativeName: String,
     @SerialName("isoCode2") val isoCode2: String,
     @SerialName("isoCode3") val isoCode3: String,
-    @SerialName("letters") val letters: List<String>,
 )
 
 @Serializable
@@ -54,18 +51,24 @@ data class WordResponse(
     @SerialName("language") val language: LanguageResponse,
 )
 
+@Serializable
+data class LetterResponse(
+    @SerialName("id") val id: Int,
+    @SerialName("name") val name: String
+)
+
 fun LanguageResponse.toLanguage() = Language(
     id = LanguageId(id),
     name = name,
     nativeName = nativeName,
     isoCode2 = isoCode2,
     isoCode3 = isoCode3,
-    letters = letters
 )
 
-fun FieldResponse.toField() = Field(
+fun FieldResponse.toField(additionalAttempts: Int) = Field(
     width = width,
-    height = height
+    height = height,
+    realHeight = height + additionalAttempts
 )
 
 fun AttemptResponse.toAttempt() = Attempt(
@@ -85,6 +88,7 @@ fun WordResponse.toWord() = Word(
 fun GameResponse.toGame() = Game(
     id = GameId(id),
     word = word.toWord(),
-    field = field.toField(),
-    attempts = attempts.map { it.toAttempt() }
+    field = field.toField(additionalAttempts),
+    attempts = attempts.map { it.toAttempt() },
+    additionalAttempts = additionalAttempts
 )

@@ -11,13 +11,15 @@ import com.arkivanov.decompose.extensions.compose.jetpack.stack.Children
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import letters.game.core.permission.BindPermissionController
 import letters.game.core.theme.AppTheme
-import letters.game.feautures.root.ui.FakeRootComponent
-import letters.game.feautures.root.ui.RootComponent
+import letters.game.core.theme.custom.CustomTheme
 import letters.game.core.ui.MessageUi
 import letters.game.core.utils.LocalSystemBarsSettings
 import letters.game.core.utils.accumulate
-import letters.game.core.theme.custom.CustomTheme
+import letters.game.features.game.GameUi
 import letters.game.features.home.HomeUi
+import letters.game.features.splash.SplashUi
+import letters.game.feautures.root.ui.FakeRootComponent
+import letters.game.feautures.root.ui.RootComponent
 
 @Composable
 fun RootUi(
@@ -33,10 +35,12 @@ fun RootUi(
         stack = childStack
     ) { child ->
         when (val instance = child.instance) {
+            is RootComponent.Child.Splash -> SplashUi(instance.component)
             is RootComponent.Child.Home -> HomeUi(instance.component)
-            is RootComponent.Child.Game -> TODO()
+            is RootComponent.Child.Game -> GameUi(instance.component)
         }
     }
+
 
 
     MessageUi(

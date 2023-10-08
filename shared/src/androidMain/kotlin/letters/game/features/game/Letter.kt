@@ -22,11 +22,6 @@ import letters.game.core.theme.custom.CustomTheme
 import letters.game.core.ui.GradientColors
 import letters.game.feautures.game.domain.LetterState
 
-private data class LetterColor(
-    val text: Color,
-    val border: BorderStroke?
-)
-
 @Composable
 fun Letter(
     modifier: Modifier = Modifier,
@@ -37,30 +32,21 @@ fun Letter(
 ) {
     val isFocused = hasFocus && text.length == index
     val color = when (letterState) {
-        is LetterState.Input -> LetterColor(
-            text = CustomTheme.colors.text.backgroundInvert(),
-            border = null
-        )
+        is LetterState.Input -> CustomTheme.colors.text.backgroundInvert()
 
-        is LetterState.InvalidPosition -> LetterColor(
-            text = CustomTheme.colors.button.purple.start(),
-            border = null
-        )
+        is LetterState.InvalidPosition -> CustomTheme.colors.button.purple.start()
 
-        is LetterState.Success -> LetterColor(
-            text = CustomTheme.colors.text.primary.success(),
-            border = null
-        )
+        is LetterState.Success -> CustomTheme.colors.text.primary.success()
 
-        is LetterState.Error -> LetterColor(
-            text = CustomTheme.colors.button.primary.error.start(),
-            border = null
-        )
+        is LetterState.Error -> CustomTheme.colors.button.primary.error.start()
+
+        LetterState.Empty -> Color.Transparent
     }
     val boarderColor = when {
         isFocused -> CustomTheme.colors.button.primary.default.start()
-        else -> color.text
+        else -> Color.Transparent
     }
+
     Box(
         Modifier
             .size(64.dp)
@@ -68,12 +54,11 @@ fun Letter(
                 CustomTheme.colors.background.letterBackground(),
                 shape = RoundedCornerShape(16.dp)
             )
-            .border(3.dp, boarderColor, RoundedCornerShape(16.dp))
-            .then(modifier)
+            .border(3.dp, boarderColor, RoundedCornerShape(16.dp)).then(modifier)
     ) {
         Text(
-            text = letterState.symbol,
-            color = color.text,
+            text = letterState.symbol.uppercase(),
+            color = color,
             style = CustomTheme.typography.title.boldVeryLarge,
             modifier = Modifier.align(Alignment.Center)
         )

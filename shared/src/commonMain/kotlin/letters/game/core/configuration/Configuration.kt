@@ -8,7 +8,8 @@ data class Configuration(
     val appVersionName: String,
     val appVersionCode: Int,
     val backend: Backend,
-    val device: DeviceInfo
+    val device: DeviceInfo,
+    val ad: Ad
 )
 
 data class DeviceInfo(

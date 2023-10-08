@@ -8,10 +8,7 @@ import letters.game.feautures.splash.data.dto.DeviceResponse
 
 
 interface DeviceApi {
-    companion object {
-        private const val CREATE_DEVICE = "device"
-    }
-    @POST(CREATE_DEVICE)
+    @POST("device")
     suspend fun createDevice(
         @Body deviceRequest: DeviceRequest
     ): BaseResponse<DeviceResponse>

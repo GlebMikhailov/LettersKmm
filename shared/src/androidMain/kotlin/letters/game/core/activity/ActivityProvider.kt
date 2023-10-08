@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.first
 class ActivityProvider {
 
     private val activityStateMutableFlow = MutableStateFlow<ComponentActivity?>(null)
-
     val activityStateFlow: StateFlow<ComponentActivity?>
         get() = activityStateMutableFlow
 

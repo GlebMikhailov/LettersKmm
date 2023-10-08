@@ -26,11 +26,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import dev.icerock.moko.resources.compose.localized
-import letters.game.core.bottomsheet.ModalBottomSheet
-import letters.game.core.message.ui.FakeMessageComponent
-import letters.game.core.theme.AppTheme
 import letters.game.core.message.domain.Message
+import letters.game.core.message.ui.FakeMessageComponent
 import letters.game.core.message.ui.MessageComponent
+import letters.game.core.theme.AppTheme
 import letters.game.core.theme.custom.CustomTheme
 
 /**

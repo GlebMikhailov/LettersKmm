@@ -39,7 +39,7 @@ import letters.game.feautures.home.ui.HomeComponent
 
 @Composable
 fun HomeUi(component: HomeComponent) {
-    val commonField = component.commonFieldData
+    val commonFieldData = component.commonFieldData
     val animatedTitleColor = remember { Animatable(0f) }
     val maxTextPadding = 72.dp.value - 40f.dp.value
     val maxHeight = CustomTheme.typography.title.boldNormal.fontSize.value * 1.86f + maxTextPadding
@@ -68,12 +68,14 @@ fun HomeUi(component: HomeComponent) {
     ) {
         Column(Modifier.align(Alignment.Center)) {
             Field(
-                lettersState = commonField.map { it.localized().getLetterState(commonField.last().localized()) },
+                lettersState = commonFieldData.map { it.localized().uppercase().getLetterState(commonFieldData.last().localized()) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
                 inputControl = component.wordInputControl,
-                onUpdatingLetterState = {  }
+                field = component.field,
+                currentEditingRow = -1,
+                currentEditingCell = -1
             )
         }
         Box(
@@ -111,11 +113,15 @@ fun HomeUi(component: HomeComponent) {
         ) {
             AppButton(
                 modifier = Modifier.padding(horizontal = 16.dp),
-                text = MR.strings.home_play.desc().localized()
+                text = MR.strings.home_play.desc().localized(),
+                onClick = component::onStartGameClick
             )
             AppButton(
                 modifier = Modifier.padding(horizontal = 16.dp),
-                text = MR.strings.home_set_language.desc().localized()
+                text = MR.strings.home_set_language.desc().localized(),
+                onClick = {
+
+                }
             )
             Spacer(modifier = Modifier.height(24.dp))
         }

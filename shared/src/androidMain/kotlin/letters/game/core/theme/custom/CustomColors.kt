@@ -26,12 +26,12 @@ data class GradientColor(
 
 data class ButtonColors(
     val primary: PrimaryColor,
-    val purple: GradientColor
+    val purple: GradientColor,
+    val secondaryColor: PrimaryColor
 )
 
 data class PrimaryColor(
     val default: GradientColor,
-    val pressed: GradientColor,
     val disabled: @Composable () -> Color,
     val link: @Composable () -> Color,
     val shadowColor: @Composable () -> Color,

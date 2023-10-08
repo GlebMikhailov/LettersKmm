@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.os.Build
 import android.provider.Settings
+import com.yandex.mobile.ads.common.MobileAds
 import letters.game.core.Core
 import letters.game.core.CoreProvider
+import letters.game.core.configuration.Ad
 import letters.game.core.configuration.Backend
 import letters.game.core.configuration.BuildType
 import letters.game.core.configuration.Configuration
@@ -30,6 +32,10 @@ abstract class BaseApplication : Application(), CoreProvider {
         super.onCreate()
         core = Core(getConfiguration())
         core.launchAndroidDebugTools()
+
+        MobileAds.initialize(this) {
+
+        }
     }
 
     @SuppressLint("HardwareIds")
@@ -51,6 +57,9 @@ abstract class BaseApplication : Application(), CoreProvider {
             ),
             store = applicationContext.getStore(),
             model = getDeviceName()
+        ),
+        ad = Ad(
+            yandex = "demo-rewarded-yandex"
         )
     )
 

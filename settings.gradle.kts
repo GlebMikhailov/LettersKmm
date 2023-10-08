@@ -29,6 +29,7 @@ pluginManagement {
 rootProject.name = "Letters KMM"
 include(":androidApp")
 include(":shared")
+include(":androidApp:google")
 
 dependencyResolutionManagement {
     repositories {
@@ -142,18 +143,21 @@ dependencyResolutionManagement {
             val phoneNumberVersion = "8.2.0"
             val accompanistVersion = "0.28.0"
             val collapsingToolbarVersion = "2.3.5"
+            val lottieAnimationVersion = "6.1.0"
             library("activity", "androidx.activity", "activity-ktx").version(activityVersion)
             library("compose-ui", "androidx.compose.ui", "ui").version(composeVersion)
             library("compose-material", "androidx.compose.material", "material").version(composeMaterialVersion)
             library("compose-tooling", "androidx.compose.ui", "ui-tooling").version(composeVersion)
             library("activity-compose", "androidx.activity", "activity-compose").version(activityComposeVersion)
+            library("compose-lottie", "com.airbnb.android", "lottie-compose").version(lottieAnimationVersion)
             bundle(
                 "compose",
                 listOf(
                     "compose-ui",
                     "compose-material",
                     "compose-tooling",
-                    "activity-compose"
+                    "activity-compose",
+                    "compose-lottie"
                 )
             )
 
@@ -200,9 +204,15 @@ dependencyResolutionManagement {
                 )
             )
 
-            // Yandex MapKit
-            val yandexMapVersion = "4.2.2-lite"
-            library("yandex-map", "com.yandex.android", "maps.mobile").version(yandexMapVersion)
+            // Ad
+            val yandexAdVersion = "5.10.0"
+            library("ad-yandex", "com.yandex.android", "mobileads").version(yandexAdVersion)
+            bundle(
+                "ad",
+                listOf(
+                    "ad-yandex"
+                )
+            )
 
             // Compose Balloon
             val composeBalloon = "1.5.2"
@@ -221,4 +231,3 @@ dependencyResolutionManagement {
         }
     }
 }
-include(":androidApp:google")

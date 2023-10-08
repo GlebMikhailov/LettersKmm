@@ -22,3 +22,21 @@ data class DeviceResponse(
 )
 
 fun DeviceResponse.toDevice() = Device.DEFAULT.copy(freeGames = freeGames, lastGame = game?.toGame())
+
+fun String.toStore(): Device.Store {
+    return when (this) {
+        "google_play" -> Device.Store.GooglePlay
+        "app_store" -> Device.Store.AppStore
+        "app_gallery" -> Device.Store.AppGallery
+        "none" -> Device.Store.None
+        else -> throw IllegalArgumentException("Store not found")
+    }
+}
+
+fun String.toDeviceType(): Device.DeviceType {
+    return when (this) {
+        "ios" -> Device.DeviceType.Ios
+        "android" -> Device.DeviceType.Android
+        else -> throw IllegalArgumentException("Device type not found")
+    }
+}

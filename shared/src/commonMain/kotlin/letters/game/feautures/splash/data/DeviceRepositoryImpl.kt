@@ -30,7 +30,7 @@ class DeviceRepositoryImpl(
                 type = configuration.platform.type.toRemote(),
                 store = deviceInfo.store.toRemote()
             )
-            deviceApi.createDevice(request).data.toDevice()
+            deviceApi.createDevice(request).data?.toDevice() ?: throw IllegalArgumentException("Invalid Device")
         }
     )
 }

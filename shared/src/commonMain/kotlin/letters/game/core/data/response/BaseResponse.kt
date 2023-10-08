@@ -8,9 +8,9 @@ data class BaseResponse<T>(
     @SerialName("message")
     val message: String? = null,
     @SerialName("data")
-    val data: T,
+    val data: T?,
     @SerialName("type")
-    val type: BaseResponseType,
+    val type: String,
 )
 
 enum class BaseResponseType {

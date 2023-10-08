@@ -46,7 +46,7 @@ dependencies {
     implementation(project(":androidApp"))
 
     implementation(libs.bundles.compose)
-    implementation(libs.yandex.map)
+    implementation(libs.bundles.ad)
     implementation(libs.splashscreen)
     implementation(libs.replica.core)
     implementation(libs.ktor.android)
